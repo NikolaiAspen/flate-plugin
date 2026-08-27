@@ -1,6 +1,7 @@
 {
   "name": "flate",
   "owner": { "name": "Nikolai Aspen", "url": "https://github.com/NikolaiAspen" },
+  "description": "Flate for Claude Code og Codex – kundegjennomgang som MCP-verktøy",
   "plugins": [
     { "name": "flate", "source": "./plugins/flate", "description": "Kundegjennomgang: kunden peker og kommenterer i appen din, du får kommentarene som MCP-verktøy og slash-kommandoer.", "category": "productivity", "tags": ["review", "mcp", "feedback"] }
   ]

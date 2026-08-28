@@ -13,4 +13,4 @@ argument-hint: "<rundenavn> <url> [url ...]"
 4. `mcp__flate__create_round` med `project_id`, navn og flater.
 5. `mcp__flate__create_share_link` med `round_id` (passord/utløp bare hvis brukeren ber om det).
 6. Skriv ut delingslenken tydelig, og to setninger kunden kan få: «Åpne lenken, skriv navnet ditt, slå på Kommentér og pek på det du vil endre.»
-7. Minn om at appen på URL-en må ha `@flate/sdk` montert (`/flate:installer`) og tillate portalen i `frame-ancestors`.
+7. Minn om at appen på URL-en må ha `@flateapp/sdk` montert (`/flate:installer`) og tillate portalen i `frame-ancestors`.

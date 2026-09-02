@@ -7,7 +7,11 @@ Kunden peker og kommenterer i appen din. Du får kommentarene som verktøy i Cla
     /plugin install flate@flate
     /mcp            → velg «flate» → Authenticate (logg inn i nettleseren)
 
-Deretter: `/flate:installer` (én gang per app), `/flate:ny-runde Runde 1 https://preview.din-app.no`, del lenken, og `/flate:runde` når kunden har kommentert.
+Deretter: `/flate:installer` (én gang per app), så ett av:
+- **`/flate:del`** – deler appen du kjører **lokalt** med kunden uten å deploye: tunnelerer `localhost` til en offentlig URL og lager runden i én kommando. Bruk denne under utvikling.
+- **`/flate:ny-runde Runde 1 https://preview.din-app.no`** – når du allerede har en offentlig URL (deploy/preview).
+
+Del lenken kunden får, og `/flate:runde` når de har kommentert. `/flate:status` viser åpne runder.
 
 ## Codex
 Se `codex/README.md`.

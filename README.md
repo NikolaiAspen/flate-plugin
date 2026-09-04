@@ -13,5 +13,7 @@ Deretter: `/flate:installer` (én gang per app), så ett av:
 
 Del lenken kunden får, og `/flate:runde` når de har kommentert. `/flate:status` viser åpne runder.
 
+**`/flate:issues`** gjør åpne kommentarer om til issues i din egen tracker (Linear/GitHub/Azure) via dine MCP-koblinger — Flate holder ingen integrasjoner selv.
+
 ## Codex
 Se `codex/README.md`.

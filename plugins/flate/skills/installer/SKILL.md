@@ -62,6 +62,14 @@ Avklar med brukeren: enten (a) gi kunden en test-/kundekonto så de logger inn i
 bridgen også være på innloggingssiden — eller (b) pek runden på offentlige ruter. Nevn dette i
 oppsummeringen så brukeren ordner en innlogging til kunden.
 
+**Ekstern innlogging (Vipps, BankID, Google, m.fl.) fungerer ikke i en iframe.** Slike
+IdP-er sender `X-Frame-Options`/`frame-ancestors` fra sin egen server og nekter å vises i en
+ramme — det kan verken appen eller Flate overstyre (kunden får «nettstedet nektet tilkoblingen»).
+Bruk en rammbar innloggingsmetode i stedet: e-post + engangskode, magisk lenke, eller
+brukernavn/passord — vanlige skjemaer på appens eget opphav virker i rammen. Fint grep: skjul
+den eksterne knappen når appen kjører i en iframe (`Platform.OS === "web" && window.self !== window.top`,
+eller tilsvarende), så kunden ikke møter en feil som ikke kan løses.
+
 ## Feilsøking: «Appen svarer ikke»
 
 Tre vanlige årsaker, sjekk i rekkefølge:

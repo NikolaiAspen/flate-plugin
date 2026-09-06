@@ -11,7 +11,7 @@ Poenget: under utvikling er ingenting deployet. Denne skillen gjør den lokale a
 
 ## Forutsetninger (sjekk kort)
 - Appen må allerede kjøre lokalt (dev-server). Gjør den ikke det: be brukeren starte den og oppgi porten.
-- `@flateapp/sdk` må være montert (`/flate:installer`) og portalen tillatt i `frame-ancestors`. I dev er dette som regel på plass; hvis appen ikke rammes inn i portalen, kjør `/flate:installer`.
+- `@flateapp/sdk` (`^0.3.0`) må være montert (`/flate:installer`) og portalen tillatt i `connect-src` hvis appen har CSP. Vises ikke overlayet i appen, kjør `/flate:installer`.
 
 ## Slik gjør du det
 1. **Finn porten.** Første argument er porten hvis oppgitt. Ellers: prøv å oppdage dev-serveren (`lsof -iTCP -sTCP:LISTEN -P -n | grep -E 'node|next|vite|expo'` eller sjekk vanlige porter 3000/5173/8080/19006/4321). Er det tvetydig, spør brukeren kort hvilken port appen kjører på.

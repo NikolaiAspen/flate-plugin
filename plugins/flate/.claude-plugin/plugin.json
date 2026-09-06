@@ -1,7 +1,7 @@
 {
   "name": "flate",
   "displayName": "Flate",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Pek-og-kommenter kundegjennomgang med MCP-verktøy og slash-kommandoer.",
   "author": { "name": "Nikolai Aspen", "url": "https://github.com/NikolaiAspen" },
   "homepage": "https://github.com/NikolaiAspen/flate-plugin",

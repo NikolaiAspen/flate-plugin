@@ -1,7 +1,6 @@
 ---
 name: issues
 description: Gjør åpne Flate-kommentarer om til issues/oppgaver i din egen issue-tracker (Linear, GitHub Issues, Azure DevOps eller annet med MCP), via dine egne MCP-koblinger. Bruk når brukeren kjører /flate:issues eller sier «lag oppgaver av kommentarene».
-disable-model-invocation: true
 argument-hint: "[rundenavn eller runde-id] [tracker]"
 ---
 

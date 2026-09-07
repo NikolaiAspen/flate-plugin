@@ -1,7 +1,6 @@
 ---
 name: installer
 description: Koble dette repoet til Flate så kunder kan peke og kommentere i den ekte appen. Dekker Next.js, Expo Router, Vite/React, monorepo med både web- og expo-app, CSP (connect-src), innloggingsvegg og feilsøking. Bruk når brukeren kjører /flate:installer eller ber om å «koble appen til Flate».
-disable-model-invocation: true
 ---
 
 # Flate: koble appen til

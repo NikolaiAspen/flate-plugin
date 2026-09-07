@@ -1,7 +1,6 @@
 ---
 name: del
 description: Del appen du utvikler LOKALT med en kunde – uten å deploye. Tunnelerer localhost til en offentlig URL og lager en Flate-runde i én kommando. Bruk når brukeren kjører /flate:del eller sier «del appen jeg kjører lokalt».
-disable-model-invocation: true
 argument-hint: "[port] [rundenavn]"
 ---
 

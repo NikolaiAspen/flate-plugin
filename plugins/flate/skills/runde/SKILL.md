@@ -1,7 +1,6 @@
 ---
 name: runde
 description: Hent åpne kundekommentarer fra Flate, implementer dem i dette repoet og meld tilbake status. Bruk når brukeren sier «ta runden», «hent kommentarene fra Flate» eller kjører /flate:runde.
-disable-model-invocation: true
 argument-hint: "[rundenavn eller runde-id]"
 ---
 

@@ -1,7 +1,6 @@
 ---
 name: ny-runde
 description: Opprett en ny Flate-gjennomgangsrunde med flater (URL-er) og få delingslenken til kunden. Bruk når brukeren vil dele en preview med en kunde eller kjører /flate:ny-runde.
-disable-model-invocation: true
 argument-hint: "<rundenavn> <url> [url ...]"
 ---
 

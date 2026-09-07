@@ -10,6 +10,8 @@ Poenget: Flate holder ikke integrasjoner mot Linear/GitHub/Azure selv. Du har al
 issue-trackeren din koblet som MCP-server i Claude Code — denne skillen lar AGENTEN opprette
 issues der via DINE koblinger. Fungerer for enhver tracker med en MCP-server.
 
+Får du 401/uautentisert fra `mcp__flate__*`: be brukeren kjøre `/mcp` → `flate` → Authenticate, og prøv igjen. Kjenner du ikke Flate fra før i denne økten: les `../oversikt/SKILL.md` (relativt til denne skillens mappe).
+
 ## Før du starter
 1. Finn trackeren: er «tracker» oppgitt som argument, bruk den. Ellers se hvilke issue-tracker-MCP-servere som er tilgjengelige (verktøy som `mcp__linear__*`, `mcp__github__*`/`create_issue`, `mcp__azure*__*`/work items). Finnes flere, spør kort hvilken. Finnes ingen: si at brukeren må koble en tracker som MCP-server først (`/mcp`), og stopp.
 2. Bekreft hvilket team/prosjekt/repo issues skal havne i (Linear: team; GitHub: eier/repo; Azure: organisasjon/prosjekt). Spør én gang hvis uklart; husk svaret for resten av kjøringen.

@@ -5,6 +5,8 @@ description: Koble dette repoet til Flate så kunder kan peke og kommentere i de
 
 # Flate: koble appen til
 
+Kjenner du ikke Flate fra før i denne økten: les `../oversikt/SKILL.md` (relativt til denne skillens mappe).
+
 Portal-origin: `https://portal-production-c530.up.railway.app` (med mindre brukeren sier annet).
 SDK-en `@flateapp/sdk` (krev `^0.3.0`) ligger på npm.
 
@@ -58,6 +60,20 @@ BankID og Google, virker som vanlig. Uten token, og utenfor portalens ramme, er 
 
 7. **Oppsummer.** Si at appen må deployes (til den URL-en runden skal peke på) før den kan brukes,
    deretter `/flate:ny-runde` (eller `/flate:del` for å dele en lokal app uten deploy).
+
+## Sjekk en deployet app
+
+Kjør dette mot adressen runden skal peke på, før du deler lenken:
+
+```
+curl -sI https://<app> | grep -i content-security-policy | grep -o 'connect-src[^;]*'
+curl -s https://<app> | grep -o '/_next/static/chunks/[^"]*\.js' | while read c; do curl -s "https://<app>$c" | grep -q 'flate:review-token' && echo "SDK i $c"; done
+```
+
+Første linje skal inneholde portal-origin (bare hvis appen har CSP i det hele tatt). Andre linje skal
+gi minst ett treff — det er SDK-markøren i bundelen kunden faktisk laster. For en Expo-web-eksport
+under `/app`: finn `_expo/static/js/web/entry-*.js` i HTML-en og grep den samme markøren der.
+Ingen treff betyr at bridgen ikke er i bygget kunden får (feil app, gammel deploy eller SDK < 0.3.0).
 
 ## Krysslenkede apper (Next + Expo i samme repo)
 

@@ -8,6 +8,8 @@ argument-hint: "[port] [rundenavn]"
 
 Poenget: under utvikling er ingenting deployet. Denne skillen gjør den lokale appen delbar for en kunde uten Vercel/Netlify/Railway – ved å åpne en midlertidig offentlig tunnel til `localhost` og lage en Flate-runde mot den.
 
+Får du 401/uautentisert fra `mcp__flate__*`: be brukeren kjøre `/mcp` → `flate` → Authenticate, og prøv igjen. Kjenner du ikke Flate fra før i denne økten: les `../oversikt/SKILL.md` (relativt til denne skillens mappe).
+
 ## Forutsetninger (sjekk kort)
 - Appen må allerede kjøre lokalt (dev-server). Gjør den ikke det: be brukeren starte den og oppgi porten.
 - `@flateapp/sdk` (`^0.3.0`) må være montert (`/flate:installer`) og portalen tillatt i `connect-src` hvis appen har CSP. Vises ikke overlayet i appen, kjør `/flate:installer`.
@@ -19,7 +21,7 @@ Poenget: under utvikling er ingenting deployet. Denne skillen gjør den lokale a
    `cloudflared tunnel --url http://localhost:<port>` – kjør som bakgrunnsprosess. URL-en dukker opp i stderr som `https://<tilfeldig>.trycloudflare.com` (kan ta 3–10 sek). Les output til du ser den; ikke gå videre uten en URL.
 4. **Verifiser at URL-en svarer:** `curl -sI https://<...>.trycloudflare.com` skal gi en HTTP-status (200/3xx). Får du feil, vent noen sekunder og prøv igjen; vedvarer det, meld fra og stopp.
 5. **Enhet:** utled fra hva brukeren deler (mobilapp→iphone, nettbrett→ipad, ellers desktop). Spør kort hvis uklart; default iphone for Expo/React Native, desktop ellers.
-6. **Lag runden:** `mcp__flate__list_projects` → velg prosjektet som matcher repoet (opprett med `mcp__flate__create_project` og mappenavnet hvis det mangler). `mcp__flate__create_round` med `project_id`, et auto-navn («Runde N») eller andre argument som navn, og én flate `{ name: "<branch/forsiden>", url: "<tunnel-url>", device }`. Sett `brief` hvis brukeren sa hva de vil ha tilbakemelding på.
+6. **Lag runden:** `mcp__flate__list_projects` → velg prosjektet som matcher repoet (`githubRepo` mot origin-remoten, ellers mappenavn). Mangler det: `mcp__flate__create_project` med mappenavnet som `name` og `eier/repo` fra `git remote get-url origin` som `github_repo`. `mcp__flate__create_round` med `project_id`, et auto-navn («Runde N») eller andre argument som navn, og én flate `{ name: "<branch/forsiden>", url: "<tunnel-url>", device }`. Sett `brief` hvis brukeren sa hva de vil ha tilbakemelding på.
 7. **Delingslenke:** `mcp__flate__create_share_link` med `round_id`. Skriv den ut tydelig.
 8. **Oppsummer for brukeren:**
    - Delingslenken (send til kunden – ingen konto: «Åpne lenken, skriv navnet ditt, slå på Kommentér, pek på det du vil endre»).

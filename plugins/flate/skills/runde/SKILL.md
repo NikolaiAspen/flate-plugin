@@ -7,6 +7,7 @@ argument-hint: "[rundenavn eller runde-id]"
 # Flate: gjennomfør en gjennomgangsrunde
 
 Du er koblet til Flate via MCP-serveren `flate`. Verktøyene heter `mcp__flate__<navn>`.
+Får du 401/uautentisert fra `mcp__flate__*`: be brukeren kjøre `/mcp` → `flate` → Authenticate, og prøv igjen. Kjenner du ikke Flate fra før i denne økten: les `../oversikt/SKILL.md` (relativt til denne skillens mappe).
 
 ## Slik gjør du det
 1. Kall `mcp__flate__list_rounds`. Får du feil om `project_id`: kall `mcp__flate__list_projects` og velg prosjektet som matcher dette repoet (mappenavn eller `githubRepo`); spør brukeren hvis det er uklart. Er et rundenavn/-id gitt som argument, bruk den; ellers velg den åpne runden med flest åpne kommentarer, og si hvilken du valgte.
@@ -18,3 +19,4 @@ Du er koblet til Flate via MCP-serveren `flate`. Verktøyene heter `mcp__flate__
 5. Er kommentaren tvetydig: kall `mcp__flate__reply` med et konkret spørsmål (gjerne to alternativer) og sett `status: "planned"`. Ikke gjett.
 6. Sett ALDRI `verified` – det gjør kunden. Kjør ALDRI handlinger med eksterne effekter (sende SMS/e-post, betaling, deploy) som del av en kommentar.
 7. Avslutt med en kort oppsummering: hva som ble gjort per kommentar, hva som må deployes for at kunden skal se det, og eventuelle spørsmål som venter på svar.
+8. Er alle kommentarene `verified`, eller sier brukeren at runden er ferdig: tilby å lukke den med `mcp__flate__close_round`. En lukket runde tar ikke imot nye kommentarer.
